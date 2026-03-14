@@ -1,0 +1,128 @@
+
+
+https://scikit-learn.org/stable/datasets/toy_dataset.html#diabetes-dataset
+
+
+# Train a machine learning model and track with MLflow
+
+https://www4.stat.ncsu.edu/%7Eboos/var.select/diabetes.tab.txt
+
+
+# Azure storage access info for open dataset diabetes
+blob_account_name = "azureopendatastorage"
+blob_container_name = "mlsamples"
+blob_relative_path = "diabetes"
+blob_sas_token = r"" # Blank since container is Anonymous access
+    
+# Set Spark config to access  blob storage
+wasbs_path = f"wasbs://%s@%s.blob.core.windows.net/%s" % (blob_container_name, blob_account_name, blob_relative_path)
+spark.conf.set("fs.azure.sas.%s.%s.blob.core.windows.net" % (blob_container_name, blob_account_name), blob_sas_token)
+print("Remote blob path: " + wasbs_path)
+    
+# Spark read parquet, note that it won't load any data yet by now
+df = spark.read.parquet(wasbs_path)
+
+
+
+display(df)
+
+
+The data is loaded as a Spark dataframe. Scikit-learn will expect the input dataset to be a Pandas dataframe. Run the code below to convert your dataset to a Pandas dataframe
+
+import pandas as pd
+df = df.toPandas()
+df.head()
+
+
+Train a machine learning model -- Now that you’ve loaded the data, you can use it to train a machine learning model and predict a quantitative measure of diabetes. You’ll train a regression model using the scikit-learn library and track the model with MLflow.
+
+Code:
+
+from sklearn.model_selection import train_test_split
+    
+X, y = df[['AGE','SEX','BMI','BP','S1','S2','S3','S4','S5','S6']].values, df['Y'].values
+    
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=0)
+
+
+Add another new code cell to the notebook, enter the following code in it, and run it:
+
+Code:
+
+import mlflow
+experiment_name = "experiment-diabetes"
+mlflow.set_experiment(experiment_name)
+
+The code creates an MLflow experiment named experiment-diabetes. Your models will be tracked in this experiment.
+
+Add another new code cell to the notebook, enter the following code in it, and run it:
+
+from sklearn.linear_model import LinearRegression
+    
+with mlflow.start_run():
+   mlflow.autolog()
+    
+   model = LinearRegression()
+   model.fit(X_train, y_train)
+    
+   mlflow.log_param("estimator", "LinearRegression")
+   
+   The code trains a regression model using Linear Regression. Parameters, metrics, and artifacts, are automatically logged with MLflow. Additionally, you’re logging a parameter called estimator with the value LinearRegression.
+   
+   
+   Add another new code cell to the notebook, enter the following code in it, and run it:
+   
+   from sklearn.tree import DecisionTreeRegressor
+    
+with mlflow.start_run():
+   mlflow.autolog()
+    
+   model = DecisionTreeRegressor(max_depth=5) 
+   model.fit(X_train, y_train)
+    
+   mlflow.log_param("estimator", "DecisionTreeRegressor")
+   
+   The code trains a regression model using Decision Tree Regressor. Parameters, metrics, and artifacts, are automatically logged with MLflow. Additionally, you’re logging a parameter called estimator with the value DecisionTreeRegressor.
+   
+   
+   Use MLflow to search and view your experiments
+   
+   When you’ve trained and tracked models with MLflow, you can use the MLflow library to retrieve your experiments and its details.
+   
+   
+   import mlflow
+experiments = mlflow.search_experiments()
+for exp in experiments:
+    print(exp.name)
+	
+
+To retrieve a specific experiment, you can get it by its name:
+experiment_name = "experiment-diabetes"
+exp = mlflow.get_experiment_by_name(experiment_name)
+print(exp)
+
+Using an experiment name, you can retrieve all jobs of that experiment:
+
+mlflow.search_runs(exp.experiment_id)
+
+
+To more easily compare job runs and outputs, you can configure the search to order the results. For example, the following cell orders the results by start_time, and only shows a maximum of 2 results:
+
+
+mlflow.search_runs(exp.experiment_id, order_by=["start_time DESC"], max_results=2)
+
+
+Finally, you can plot the evaluation metrics of multiple models next to each other to easily compare models:
+
+import matplotlib.pyplot as plt
+   
+df_results = mlflow.search_runs(exp.experiment_id, order_by=["start_time DESC"], max_results=2)[["metrics.training_r2_score", "params.estimator"]]
+   
+fig, ax = plt.subplots()
+ax.bar(df_results["params.estimator"], df_results["metrics.training_r2_score"])
+ax.set_xlabel("Estimator")
+ax.set_ylabel("R2 score")
+ax.set_title("R2 score by Estimator")
+for i, v in enumerate(df_results["metrics.training_r2_score"]):
+    ax.text(i, v, str(round(v, 2)), ha='center', va='bottom', fontweight='bold')
+plt.show()
