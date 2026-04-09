@@ -1,0 +1,11 @@
+TenantID,TenantName,TenantType,Email,Phone,IDType,IDNumber,CreditScore
+TNT001,Rahul Sharma,Individual,rahul.sharma@email.com,9876543210,Aadhaar,XXXX-XXXX-1234,780
+TNT002,Priya Reddy,Individual,priya.reddy@email.com,9876512345,PAN,ABCDE1234F,810
+TNT003,Infosys BPO Ltd,Corporate,facilities@infosys.com,4023456789,GST,36AABCI0048P1ZX,900
+TNT004,Meghna Patel,Individual,meghna.patel@email.com,9812345678,Aadhaar,XXXX-XXXX-5678,720
+TNT005,TCS Technologies,Corporate,realestate@tcs.com,4027654321,GST,36AAACT2727Q1ZV,950
+TNT006,Arjun Nair,Individual,arjun.nair@email.com,9823456780,Passport,Z1234567,755
+TNT007,Sneha Kulkarni,Individual,sneha.kulkarni@email.com,9901234567,Aadhaar,XXXX-XXXX-9012,690
+TNT008,CloudFirst Pvt Ltd,Corporate,admin@cloudfirst.in,4028765432,GST,36AABCC5678M1ZY,875
+TNT009,Vikram Singh,Individual,vikram.singh@email.com,9988776655,PAN,FGHIJ5678K,800
+TNT010,Ananya Desai,Individual,ananya.desai@email.com,9765432109,Aadhaar,XXXX-XXXX-3456,740
