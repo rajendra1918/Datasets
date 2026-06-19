@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="Y2NDy60CONrbbACvRmI5">
+    <mxGraphModel dx="1401" dy="627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" value="Better Optimization: Semantic Model in Power BI / Fabric" vertex="1">
+          <mxGeometry height="30" width="700" x="40" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="cat1" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#E1F5EE;strokeColor=#0F6E56;fontColor=#04342C;fontSize=14;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=8;glass=0;" value="1. Reduce Data Volume" vertex="1">
+          <mxGeometry height="190" width="620" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c1a" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#9FE1CB;strokeColor=#0F6E56;fontColor=#04342C;fontSize=12;glass=0;" value="Remove Unnecessary Data&#xa;Unused columns, rows, queries" vertex="1">
+          <mxGeometry height="56" width="270" x="60" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c1b" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#9FE1CB;strokeColor=#0F6E56;fontColor=#04342C;fontSize=12;glass=0;" value="Reduce Cardinality&#xa;Split columns, round decimals" vertex="1">
+          <mxGeometry height="56" width="270" x="350" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c1c" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#9FE1CB;strokeColor=#0F6E56;fontColor=#04342C;fontSize=12;glass=0;" value="Aggregate &amp; Use Right Data Types&#xa;Pre-aggregate, smallest type" vertex="1">
+          <mxGeometry height="56" width="270" x="60" y="166" as="geometry" />
+        </mxCell>
+        <mxCell id="c1d" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#9FE1CB;strokeColor=#0F6E56;fontColor=#04342C;fontSize=12;glass=0;" value="Turn off Auto Date/Time&#xa;Use one shared date table" vertex="1">
+          <mxGeometry height="56" width="270" x="350" y="166" as="geometry" />
+        </mxCell>
+        <mxCell id="cat2" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#EEEDFE;strokeColor=#534AB7;fontColor=#26215C;fontSize=14;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=8;glass=0;" value="2. Model Design" vertex="1">
+          <mxGeometry height="260" width="620" x="40" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="c2a" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#CECBF6;strokeColor=#534AB7;fontColor=#26215C;fontSize=12;glass=0;" value="Enforce Star Schema&#xa;Avoid snowflake and flat tables" vertex="1">
+          <mxGeometry height="56" width="270" x="60" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="c2b" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#CECBF6;strokeColor=#534AB7;fontColor=#26215C;fontSize=12;glass=0;" value="Avoid Bi-directional Filters&#xa;Single direction where possible" vertex="1">
+          <mxGeometry height="56" width="270" x="350" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="c2c" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#CECBF6;strokeColor=#534AB7;fontColor=#26215C;fontSize=12;glass=0;" value="Avoid Calculated Columns&#xa;Push logic to Power Query/source" vertex="1">
+          <mxGeometry height="56" width="270" x="60" y="376" as="geometry" />
+        </mxCell>
+        <mxCell id="c2d" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#CECBF6;strokeColor=#534AB7;fontColor=#26215C;fontSize=12;glass=0;" value="Optimize Column Sort Order&#xa;Sort by low-cardinality first" vertex="1">
+          <mxGeometry height="56" width="270" x="350" y="376" as="geometry" />
+        </mxCell>
+        <mxCell id="c2e" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#CECBF6;strokeColor=#534AB7;fontColor=#26215C;fontSize=12;glass=0;" value="Disable Unused Hierarchies&#xa;Skip auto-detected relationships" vertex="1">
+          <mxGeometry height="56" width="270" x="60" y="442" as="geometry" />
+        </mxCell>
+        <mxCell id="c2f" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#CECBF6;strokeColor=#534AB7;fontColor=#26215C;fontSize=12;glass=0;" value="Set Summarize-by to None&#xa;For ID and key columns" vertex="1">
+          <mxGeometry height="56" width="270" x="350" y="442" as="geometry" />
+        </mxCell>
+        <mxCell id="cat3" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FAECE7;strokeColor=#993C1D;fontColor=#4A1B0C;fontSize=14;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=8;glass=0;" value="3. DAX &amp; Calculation Engine" vertex="1">
+          <mxGeometry height="260" width="620" x="40" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="c3a" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5C4B3;strokeColor=#993C1D;fontColor=#4A1B0C;fontSize=12;glass=0;" value="Use Variables (VAR)&#xa;Avoid recomputing expressions" vertex="1">
+          <mxGeometry height="56" width="270" x="60" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="c3b" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5C4B3;strokeColor=#993C1D;fontColor=#4A1B0C;fontSize=12;glass=0;" value="Minimize Iterators on Big Tables&#xa;Prefer engine functions over SUMX" vertex="1">
+          <mxGeometry height="56" width="270" x="350" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="c3c" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5C4B3;strokeColor=#993C1D;fontColor=#4A1B0C;fontSize=12;glass=0;" value="Filter Early, Filter Small&#xa;Avoid FILTER on whole tables" vertex="1">
+          <mxGeometry height="56" width="270" x="60" y="656" as="geometry" />
+        </mxCell>
+        <mxCell id="c3d" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5C4B3;strokeColor=#993C1D;fontColor=#4A1B0C;fontSize=12;glass=0;" value="Profile with DAX Studio / BPA&#xa;Find slow, costly measures" vertex="1">
+          <mxGeometry height="56" width="270" x="350" y="656" as="geometry" />
+        </mxCell>
+        <mxCell id="c3e" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5C4B3;strokeColor=#993C1D;fontColor=#4A1B0C;fontSize=12;glass=0;" value="Enable Query Folding&#xa;Push transforms to source" vertex="1">
+          <mxGeometry height="56" width="270" x="60" y="722" as="geometry" />
+        </mxCell>
+        <mxCell id="c3f" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F5C4B3;strokeColor=#993C1D;fontColor=#4A1B0C;fontSize=12;glass=0;" value="Prefer Measures over Columns&#xa;Calculate at query time, not load" vertex="1">
+          <mxGeometry height="56" width="270" x="350" y="722" as="geometry" />
+        </mxCell>
+        <mxCell id="cat4" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FAEEDA;strokeColor=#854F0B;fontColor=#412402;fontSize=14;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=8;glass=0;" value="4. Refresh &amp; Storage Strategy" vertex="1">
+          <mxGeometry height="225" width="620" x="40" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="c4a" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FAC775;strokeColor=#854F0B;fontColor=#412402;fontSize=12;glass=0;" value="Incremental Refresh&#xa;Partition large fact tables" vertex="1">
+          <mxGeometry height="56" width="270" x="60" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="c4b" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FAC775;strokeColor=#854F0B;fontColor=#412402;fontSize=12;glass=0;" value="Pick the Right Storage Mode&#xa;Import, Direct Lake, DirectQuery" vertex="1">
+          <mxGeometry height="56" width="270" x="350" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="c4c" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FAC775;strokeColor=#854F0B;fontColor=#412402;fontSize=12;glass=0;" value="Use Aggregation Tables&#xa;Pre-summarize for fast hits" vertex="1">
+          <mxGeometry height="56" width="270" x="60" y="936" as="geometry" />
+        </mxCell>
+        <mxCell id="c4d" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FAC775;strokeColor=#854F0B;fontColor=#412402;fontSize=12;glass=0;" value="Query Scaleout + Large Model Format&#xa;Scale reads, unlock 400GB+" vertex="1">
+          <mxGeometry height="56" width="270" x="350" y="936" as="geometry" />
+        </mxCell>
+        <mxCell id="c4e" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FAC775;strokeColor=#854F0B;fontColor=#412402;fontSize=12;glass=0;" value="Run VertiPaq Analyzer&#xa;Measure column size, find biggest contributors before/after every change" vertex="1">
+          <mxGeometry height="56" width="560" x="60" y="1002" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
