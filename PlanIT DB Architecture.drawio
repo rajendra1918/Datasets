@@ -1,0 +1,92 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="zqoCslXkbrsv4k81ithi">
+    <mxGraphModel dx="1401" dy="627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;verticalAlign=top;fontSize=16;fontStyle=1;arcSize=6;spacingTop=10;align=left;spacingLeft=20;" value="BCN On-Premises Network" vertex="1">
+          <mxGeometry height="220" width="640" x="330" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontSize=13;fontStyle=1;arcSize=10;" value="File Shares&#xa;Network drives, CSV / Excel" vertex="1">
+          <mxGeometry height="70" width="260" x="370" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontSize=13;fontStyle=1;arcSize=10;" value="On-Prem SQL Server&#xa;BCN local databases" vertex="1">
+          <mxGeometry height="70" width="260" x="670" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=13;fontStyle=1;arcSize=10;" value="On-Premises Data Gateway&#xa;Installed inside BCN, outbound HTTPS 443 only" vertex="1">
+          <mxGeometry height="70" width="260" x="520" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-5" edge="1" parent="1" source="7mFsMFzv8RmrVDaHLAGh-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#666666;flowAnimation=1;" target="7mFsMFzv8RmrVDaHLAGh-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-6" edge="1" parent="1" source="7mFsMFzv8RmrVDaHLAGh-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#666666;flowAnimation=1;" target="7mFsMFzv8RmrVDaHLAGh-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;verticalAlign=top;fontSize=16;fontStyle=1;arcSize=6;spacingTop=10;align=left;spacingLeft=20;" value="Microsoft Cloud" vertex="1">
+          <mxGeometry height="220" width="380" x="1050" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#BAC8D3;strokeColor=#23445D;fontSize=13;fontStyle=1;arcSize=10;" value="Azure Service Bus Relay&#xa;Listens only, never connects in" vertex="1">
+          <mxGeometry height="70" width="280" x="1100" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-9" edge="1" parent="1" source="7mFsMFzv8RmrVDaHLAGh-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#666666;fontSize=11;flowAnimation=1;" target="7mFsMFzv8RmrVDaHLAGh-8" value="outbound 443">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontSize=16;fontStyle=1;arcSize=6;spacingTop=10;align=left;spacingLeft=20;" value="Microsoft Fabric Capacity" vertex="1">
+          <mxGeometry height="520" width="1020" x="330" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=13;fontStyle=1;arcSize=10;" value="Fabric Data Pipeline&#xa;Daily scheduled trigger" vertex="1">
+          <mxGeometry height="70" width="300" x="680" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-12" edge="1" parent="1" source="7mFsMFzv8RmrVDaHLAGh-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#666666;fontSize=11;exitX=0.5;exitY=1;entryX=0.5;entryY=0;flowAnimation=1;" target="7mFsMFzv8RmrVDaHLAGh-11" value="polled by Fabric">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=13;fontStyle=1;arcSize=10;" value="Bronze Lakehouse&#xa;Raw landed copy" vertex="1">
+          <mxGeometry height="70" width="240" x="380" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=13;fontStyle=1;arcSize=10;" value="Silver Lakehouse&#xa;Cleaned, conformed" vertex="1">
+          <mxGeometry height="70" width="240" x="730" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=13;fontStyle=1;arcSize=10;" value="Gold Lakehouse&#xa;Star schema, model-ready" vertex="1">
+          <mxGeometry height="70" width="240" x="1080" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-16" edge="1" parent="1" source="7mFsMFzv8RmrVDaHLAGh-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#666666;exitX=0.25;exitY=1;entryX=0.5;entryY=0;flowAnimation=1;" target="7mFsMFzv8RmrVDaHLAGh-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-17" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;endFill=1;strokeColor=#666666;fontSize=11;flowAnimation=1;" value="Notebook / Dataflow Gen2">
+          <mxGeometry relative="1" x="0.0796" y="17" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="690" y="797" />
+              <mxPoint x="690" y="800" />
+            </Array>
+            <mxPoint x="619" y="797" as="sourcePoint" />
+            <mxPoint x="729" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-18" edge="1" parent="1" source="7mFsMFzv8RmrVDaHLAGh-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#666666;fontSize=11;flowAnimation=1;" target="7mFsMFzv8RmrVDaHLAGh-15" value="Build star schema">
+          <mxGeometry relative="1" x="-0.0909" y="15" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=13;fontStyle=1;arcSize=10;" value="Power BI Semantic Model&#xa;Direct Lake mode" vertex="1">
+          <mxGeometry height="70" width="280" x="1030" y="890" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-20" edge="1" parent="1" source="7mFsMFzv8RmrVDaHLAGh-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#666666;exitX=0.5;exitY=1;entryX=0.5;entryY=0;flowAnimation=1;" target="7mFsMFzv8RmrVDaHLAGh-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=13;fontStyle=1;arcSize=10;" value="Power BI Reports&#xa;PlanIT3 dashboards" vertex="1">
+          <mxGeometry height="70" width="280" x="680" y="890" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-22" edge="1" parent="1" source="7mFsMFzv8RmrVDaHLAGh-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#666666;flowAnimation=1;" target="7mFsMFzv8RmrVDaHLAGh-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=12;fontStyle=2;arcSize=10;align=center;" value="Master pipeline orchestrates Bronze → Silver → Gold → semantic refresh, with failure alerts via Teams/email" vertex="1">
+          <mxGeometry height="50" width="940" x="380" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="7mFsMFzv8RmrVDaHLAGh-24" parent="1" style="text;html=1;fontSize=12;fontStyle=2;align=center;fontColor=#666666;rounded=0;" value="Gateway uses only outbound HTTPS (443) — no inbound port 1433 required on the BCN firewall" vertex="1">
+          <mxGeometry height="30" width="1100" x="330" y="510" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
