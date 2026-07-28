@@ -2,6 +2,7 @@
   <diagram name="Page-1" id="zqoCslXkbrsv4k81ithi">
     <mxGraphModel dx="1401" dy="627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
+
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="7mFsMFzv8RmrVDaHLAGh-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;verticalAlign=top;fontSize=16;fontStyle=1;arcSize=6;spacingTop=10;align=left;spacingLeft=20;" value="BCN On-Premises Network" vertex="1">
