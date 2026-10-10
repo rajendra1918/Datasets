@@ -7804,3 +7804,14 @@ VALUES
 (6213,502874,20250331,4,104,0,1,4,1,8.00,0.00,8.00,1.60),
 (6214,502874,20250331,4,124,0,1,4,1,12.50,0.00,12.50,3.20);
 GO
+
+
+Questions to try in your demo
+
+What was total revenue by fiscal year?
+What are the top 10 menu items by quantity sold?
+Which restaurant had the highest sales in FY2025?
+How has delivery app revenue changed between fiscal years?
+What is the gross margin by menu category?
+Which daypart brings in the most revenue on weekends?
+How much discount did Gold and Platinum members receive?
